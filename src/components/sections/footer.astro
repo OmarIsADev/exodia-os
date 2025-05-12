@@ -1,0 +1,127 @@
+---
+import { FaDiscord, FaGithub, FaReddit, FaTelegram } from "react-icons/fa";
+
+type section = {
+  title: string;
+  links: {
+    name: string;
+    href: string;
+    major?: string;
+  }[];
+};
+
+const sectoins: section[] = [
+  {
+    title: "Developers",
+    links: [
+      { name: "Ozil", href: "", major: "Tech Lead, Core Dev" },
+      { name: "Joe", href: "", major: "Web Dev" },
+      { name: "Budas", href: "", major: "Source code review" },
+      { name: "Don som3a", href: "", major: "Docs Maintainer" },
+    ],
+  },
+  {
+    title: "Editions src code",
+    links: [
+      { name: "Home", href: "https://github.com/Exodia-OS/exodia-home-ISO" },
+      {
+        name: "Acer-Predator",
+        href: "https://github.com/Exodia-OS/exodia-acer-predator-ISO",
+      },
+      {
+        name: "Wireless",
+        href: "https://github.com/Exodia-OS/exodia-wireless-ISOISO",
+      },
+      { name: "Dark", href: "https://github.com/Exodia-OS/exodia-dark-ISO" },
+    ],
+  },
+  {
+    title: "Issues",
+    links: [
+      {
+        name: "Home",
+        href: "https://github.com/Exodia-OS/exodia-home-ISO/issues",
+      },
+      {
+        name: "Acer-Predator",
+        href: "https://github.com/Exodia-OS/exodia-acer-predator-ISO/issues",
+      },
+      {
+        name: "Wireless",
+        href: "https://github.com/Exodia-OS/exodia-wireless-ISOISO/issues",
+      },
+      {
+        name: "Dark",
+        href: "https://github.com/Exodia-OS/exodia-dark-ISO/issues",
+      },
+    ],
+  },
+];
+---
+
+<footer class="bg-gradient text-foreground-light py-8 border-t border-primary">
+  <div class="container mx-auto gap-6 flex max-sm:flex-col justify-between">
+    <div class="flex flex-wrap max-md:flex-col gap-12">
+      {
+        sectoins.map((section) => (
+          <div class="flex flex-col gap-4">
+            <h4 class="text-gradient text-2xl">{section.title}</h4>
+            <ul class="flex flex-col gap-2">
+              {section.links.map((link) => (
+                <li class="pl-4">
+                  <a href={link.href} class="hover:text-primary">
+                    {link.name}{" "}
+                    {link.major && (
+                      <span class="text-sm text-gradient">[{link.major}]</span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex flex-col gap-4">
+      <h4 class="text-gradient text-2xl">Socials</h4>
+      <div class="flex flex-wrap gap-2 items-center">
+        <a href="https://discord.gg/wPDyfR5AV9">
+          <FaDiscord
+            size={32}
+            className="hover:text-primary hover:scale-110 transition"
+          />
+        </a>
+        <a href="https://github.com/Exodia-OS">
+          <FaGithub
+            size={32}
+            className="hover:text-primary hover:scale-110 transition"
+          />
+        </a>
+        <a href="https://www.reddit.com/r/ExodiaOS">
+          <FaReddit
+            size={32}
+            className="hover:text-primary hover:scale-110 transition"
+          />
+        </a>
+        <a href="https://t.me/exodiaos">
+          <FaTelegram
+            size={32}
+            className="hover:text-primary hover:scale-110 transition"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style scoped>
+  footer {
+    width: 100%;
+  }
+
+  .container {
+    max-width: 1200px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+</style>

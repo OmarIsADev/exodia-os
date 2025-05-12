@@ -8,11 +8,7 @@
   --foreground: #ffffff;
   --foreground-light: #bcbcbcd5;
   --accent: #0571c3;
-  --accent-gradient: linear-gradient(
-    to right,
-    #0bcece,
-    rgb(var(--accent)),
-  );
+  --accent-gradient: linear-gradient(to right, #0bcece, rgb(var(--accent)));
 }
 
 @theme {
@@ -32,6 +28,16 @@
     background-clip: text;
     -webkit-background-clip: text; /* Clip text to the background's shape */
     -webkit-text-fill-color: transparent; /* Make the text transparent */
+  }
+
+  .bg-gradient {
+    background-image: linear-gradient(
+      to left,
+      #000000,
+      #040b11,
+      #040d15,
+      #041a2b
+    );
   }
 }
 
@@ -101,5 +107,4 @@ h1 {
   p {
     font-size: 16px;
   }
-  
 }
