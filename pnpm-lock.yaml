@@ -32,6 +32,9 @@ importers:
       tailwindcss:
         specifier: ^4.1.6
         version: 4.1.6
+      typed.js:
+        specifier: 2.0.12
+        version: 2.0.12
 
 packages:
 
@@ -1617,6 +1620,9 @@ packages:
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
+
+  typed.js@2.0.12:
+    resolution: {integrity: sha512-lyACZh1cu+vpfYY3DG/bvsGLXXbdoDDpWxmqta10IQUdMXisMXOEyl+jos+YT9uBbzK4QaKYBjT3R0kTJO0Slw==}
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
@@ -3718,6 +3724,8 @@ snapshots:
   tslib@2.8.1: {}
 
   type-fest@4.41.0: {}
+
+  typed.js@2.0.12: {}
 
   typescript@5.8.3: {}
 

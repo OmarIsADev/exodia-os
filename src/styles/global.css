@@ -1,1 +1,100 @@
 @import "tailwindcss";
+
+:root {
+  --primary: #58e1ff;
+  --primary-forgeround: #05eeff;
+  --foreground: #ffffff;
+  --foreground-light: #bcbcbcd5;
+  --accent: #0571c3;
+  --accent-gradient: linear-gradient(
+    to right,
+    #0bcece,
+    rgb(var(--accent)),
+  );
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-forgeround);
+  --color-foreground: var(--foreground);
+  --color-foreground-light: var(--foreground-light);
+  --color-accent: var(--accent);
+  --color-accent-gradient: var(--accent-gradient);
+}
+
+@layer base {
+  .text-gradient {
+    background-image: linear-gradient(to right, #0bcece, #0571c3);
+    background-clip: text;
+    -webkit-background-clip: text; /* Clip text to the background's shape */
+    -webkit-text-fill-color: transparent; /* Make the text transparent */
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Predator;
+  src: url(/Fonts/Squares-Regular.otf);
+}
+
+/* Customize scrollbar for WebKit browsers */
+body::-webkit-scrollbar {
+  width: 12px; /* width of the scrollbar */
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #010d16; /* color of the track */
+  border-radius: 15px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #01a8b4; /* color of the handle */
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #01a8b4; /* color of the handle on hover */
+}
+body {
+  background-color: #010d16;
+  font-family: "Predator", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.h-grad {
+  background-image: linear-gradient(
+    to right,
+    #0bcece,
+    #0571c3
+  ); /* Adjust colors as needed */
+  background-clip: text;
+  -webkit-background-clip: text; /* Clip text to the background's shape */
+  -webkit-text-fill-color: transparent; /* Make the text transparent */
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+  
+}
