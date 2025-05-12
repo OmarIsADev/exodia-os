@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
+  --background: #010d16;
   --primary: #58e1ff;
   --primary-forgeround: #05eeff;
+  --secondary: #041a2b;
   --foreground: #ffffff;
   --foreground-light: #bcbcbcd5;
   --accent: #0571c3;
@@ -14,8 +16,10 @@
 }
 
 @theme {
+  --color-background: var(--background);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-forgeround);
+  --color-secondary: var(--secondary);
   --color-foreground: var(--foreground);
   --color-foreground-light: var(--foreground-light);
   --color-accent: var(--accent);
@@ -62,6 +66,7 @@ body::-webkit-scrollbar-thumb:hover {
   background: #01a8b4; /* color of the handle on hover */
 }
 body {
+  color: var(--foreground);
   background-color: #010d16;
   font-family: "Predator", sans-serif;
   overflow-x: hidden;
