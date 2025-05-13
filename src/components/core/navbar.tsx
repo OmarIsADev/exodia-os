@@ -10,10 +10,10 @@ const routes = [
     name: "Wiki",
     href: "/wiki",
   },
-  {
-    name: "Keybinding",
-    href: "/wiki/keybinding/keybinding",
-  },
+  // {
+  //   name: "Keybinding",
+  //   href: "/wiki/keybinding/keybinding",
+  // },
   {
     name: "Gallery",
     href: "/gallery",
@@ -40,8 +40,8 @@ function NavBar() {
   }, []);
 
   return (
-    <nav className={`*:w-fit z-50 fixed w-full h-24 px-16 py-4 max-lg:grid flex grid-cols-3 max-sm:flex items-center justify-between max-lg:justify-center max-sm:justify-between transition duration-300 ${isScrolled ? "bg-background border-b border-primary" : "bg-transparent border-transparent"}`}>
-      <a href="/">
+    <nav className={`*:w-fit z-50 fixed w-full h-20 px-8 py-4 flex items-center justify-between max-lg:justify-center max-sm:justify-between transition duration-300 ${isScrolled ? "bg-background border-b border-primary" : "bg-transparent border-transparent"}`}>
+      <a className="max-lg:hidden" href="/">
         <img
           src="/Logos/exodia-cyan.png"
           alt=""
@@ -51,11 +51,11 @@ function NavBar() {
 
       <MobileMenu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
-      <div className="max-sm:hidden flex gap-6 items-center min-lg:bg-secondary h-16 min-lg:pl-6 min-lg:pr-2 py-4 min-lg:border-2 border-primary rounded-full justify-self-end">
-        <div className="max-lg:hidden flex gap-6">
+      <div className={`flex gap-12 max-md:gap-6 items-center h-16 min-sm:pl-6 min-sm:pr-2 py-4 rounded-full justify-self-end transition ${isScrolled? "": "min-sm:border-2 border-primary min-sm:bg-secondary"} `}>
+        <div className="flex gap-12 max-md:gap-6">
           {routes.map((route) => (
             <a
-              className="hover:text-primary-foreground transition"
+              className="hover:text-primary-foreground max-sm:hidden transition"
               key={route.name}
               href={route.href}
             >
@@ -84,7 +84,7 @@ function MobileMenu({
     "w-6 h-1 rounded-full bg-primary transition ease transform duration-300";
 
   return (
-    <div className="min-lg:hidden justify-self-center">
+    <div className="min-sm:hidden justify-self-center">
       <button
         className="cursor-pointer w-fit flex flex-col gap-1"
         onClick={toggle}
