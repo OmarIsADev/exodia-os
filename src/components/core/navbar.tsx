@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../ui/button";
 
 const routes = [
@@ -26,9 +26,21 @@ const routes = [
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    return window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="*:w-fit z-50 fixed w-full h-32 px-16 py-8 max-lg:grid flex grid-cols-3 max-sm:flex items-center justify-between max-lg:justify-center max-sm:justify-between">
+    <nav className={`*:w-fit z-50 fixed w-full h-24 px-16 py-4 max-lg:grid flex grid-cols-3 max-sm:flex items-center justify-between max-lg:justify-center max-sm:justify-between transition duration-300 ${isScrolled ? "bg-background border-b border-primary" : "bg-transparent border-transparent"}`}>
       <a href="/">
         <img
           src="/Logos/exodia-cyan.png"
@@ -112,19 +124,6 @@ function MobileMenu({
           </li>
         ))}
       </ul>
-
-      <style>
-        {`
-            .animate-open-menu {
-              left: 0;
-              animation-name: open-menu;
-            }
-            .animate-close-menu {
-              left: -100%;
-              animation-name: close-menu;
-            }
-        `}
-      </style>
     </div>
   );
 }
