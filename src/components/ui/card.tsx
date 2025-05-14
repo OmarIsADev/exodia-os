@@ -57,14 +57,12 @@ const Card = ({ title, tiltAmount = 20, children }: CardProps) => {
           {title}
         </h3>
       )}
-      <div className="h-full flex justify-center">
-        <div
-          className={`text-foreground-light h-full text-pretty flex flex-col gap-2.5 ${
-            title ? "text-center" : ""
-          }`}
-        >
-          {children}
-        </div>
+      <div
+        className={`text-foreground-light h-full w-full text-pretty flex flex-col gap-2.5 ${
+          title ? "text-center items-center justify-center" : ""
+        }`}
+      >
+        {children}
       </div>
     </div>
   );
