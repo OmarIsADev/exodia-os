@@ -117,11 +117,13 @@ function MobileMenu({
       >
         {/* close button */}
         <div className="flex justify-between items-center">
-          <img
-            src="/Logos/exodia-cyan.png"
-            alt=""
-            className="rounded-full size-16 transition hover:scale-110 hover:shadow hover:shadow-primary"
-          />
+          <a href="/">
+            <img
+              src="/Logos/exodia-cyan.png"
+              alt=""
+              className="rounded-full size-16 transition hover:scale-110 hover:shadow hover:shadow-primary"
+            />
+          </a>
           <div onClick={toggle} className="flex cursor-pointer relative size-6">
             <div
               className={`bg-white rotate-45 top-1/2 -translate-1/2 absolute ${classNames}`}
