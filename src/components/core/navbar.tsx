@@ -51,7 +51,7 @@ function NavBar() {
         <img
           src="/Logos/exodia-cyan.png"
           alt=""
-          className="bg-background rounded-full size-16 transition hover:scale-110 hover:shadow hover:shadow-primary"
+          className="rounded-full size-16 transition hover:scale-110 hover:shadow hover:shadow-primary"
         />
       </a>
 
@@ -120,7 +120,7 @@ function MobileMenu({
           <img
             src="/Logos/exodia-cyan.png"
             alt=""
-            className="bg-background rounded-full size-16 transition hover:scale-110 hover:shadow hover:shadow-primary"
+            className="rounded-full size-16 transition hover:scale-110 hover:shadow hover:shadow-primary"
           />
           <div onClick={toggle} className="flex cursor-pointer relative size-6">
             <div
