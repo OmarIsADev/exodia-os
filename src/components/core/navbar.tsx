@@ -40,7 +40,13 @@ function NavBar() {
   }, []);
 
   return (
-    <nav className={`*:w-fit z-50 fixed w-full h-20 px-8 py-4 flex items-center justify-between max-lg:justify-center max-sm:justify-between transition duration-300 ${isScrolled ? "bg-background border-b border-primary" : "bg-transparent border-transparent"}`}>
+    <nav
+      className={`*:w-fit z-50 fixed w-full h-20 px-8 py-4 flex items-center justify-between max-lg:justify-center max-sm:justify-between transition duration-300 ${
+        isScrolled
+          ? "bg-background border-b border-primary"
+          : "bg-transparent border-transparent"
+      }`}
+    >
       <a className="max-lg:hidden" href="/">
         <img
           src="/Logos/exodia-cyan.png"
@@ -51,7 +57,11 @@ function NavBar() {
 
       <MobileMenu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
-      <div className={`flex gap-12 max-md:gap-6 items-center h-16 min-sm:pl-6 min-sm:pr-2 py-4 rounded-full justify-self-end transition ${isScrolled? "": "min-sm:border-2 border-primary min-sm:bg-secondary"} `}>
+      <div
+        className={`flex gap-12 max-md:gap-6 items-center h-16 min-sm:pl-6 min-sm:pr-2 py-4 rounded-full justify-self-end transition ${
+          isScrolled ? "" : "min-sm:border-2 border-primary min-sm:bg-secondary"
+        } `}
+      >
         <div className="flex gap-12 max-md:gap-6">
           {routes.map((route) => (
             <a
@@ -100,10 +110,19 @@ function MobileMenu({
         ></div>
       </button>
 
-      <ul className={`flex flex-col gap-4 p-8 bg-secondary w-full max-w-[calc(100vw-4rem)] h-screen fixed top-0 transition-all duration-500 ${isOpen ? "left-0" : "left-[-100%]"}`}>
+      <ul
+        className={`flex flex-col gap-4 p-8 bg-secondary w-full max-w-[calc(100vw-4rem)] h-screen fixed top-0 transition-all duration-500 ${
+          isOpen ? "left-0" : "left-[-100%]"
+        }`}
+      >
         {/* close button */}
-        <div className="flex justify-end">
-          <div onClick={toggle} className="flex cursor-pointer relative size-8">
+        <div className="flex justify-between items-center">
+          <img
+            src="/Logos/exodia-cyan.png"
+            alt=""
+            className="bg-background rounded-full size-16 transition hover:scale-110 hover:shadow hover:shadow-primary"
+          />
+          <div onClick={toggle} className="flex cursor-pointer relative size-6">
             <div
               className={`bg-white rotate-45 top-1/2 -translate-1/2 absolute ${classNames}`}
             ></div>

@@ -1,45 +1,85 @@
 ---
 import Card from "../../ui/card";
+
+const benefits = [
+  "Exodia OS Comes with BSPWM and 20+ tailor-made fancy Themes.",
+  "Cybersecurity tools are preinstalled on Exodia OS.",
+  "Currently, 3 Editions exist: Home, Acer-Predator, and Wireless.",
+  "Currently, 3 window managers are available: BSPWM, DWM and I3WM",
+  "We will add more DEs, WMs and WCs.",
+  "Easy installation with Calamares installer.",
+  "Exodia is a Rolling Release [Always up to date]",
+  "Supporting AUR Repos [with yay]",
+];
 ---
 
-<section
-  class="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-8 container px-16 mx-auto place-items-center *:*:!w-full"
->
-  <Card client:load title="PowerShell">
-    Microsoft PowerShell pre-installed pre-configured with Oh My Posh.
-  </Card>
-  <Card client:load title="TUI Apps">
-    Support a whole bunch of TUI Apps RUN: <br />
-    <span class="text-sm text-primary">pacman -Sg Exodia-TUI-Apps </span>
-    <br />
-    to list all available apps
-  </Card>
-  <Card client:load title="Files Templates">
-    Help you to create coding files like web Dev, python, etc... and more Files
-    Templates.
-  </Card>
-  <Card client:load title="EWW">
-    Supporting ElKowars wacky widgets(EWW), comes with EWW <br />
-    <span class="text-sm text-primary">pre-installed/configured.</span>
-  </Card>
-  <Card client:load title="zsh">
-    Exodia comes zsh pre-installed and pre-configured zsh is the default shell
-  </Card>
-  <Card client:load title="PredatorSense">
-    A kernel module to control RGB & Fan speed in Linux for Acer Predator
-    Laptops via: <br />
-    <span class="text-sm text-primary"
-      >Predator-Sense-CLI <br /> Predator-Sense-GUI</span
-    >
-  </Card>
-  <Card client:load title="CyberSecurity Tools">
-    Support tools for all CyberSecurity fields using BlackArch Repos & Exodia
-    Repos
-  </Card>
-  <Card client:load title="BIOS & UEFI"> Supporting both BIOS & UEFI </Card>
-  <Card client:load title="Plymouth">
-    Supporting Plymouth <br />
-    <span class="text-sm text-primary"> exodia-plymouth </span>
-    is the default theme
-  </Card>
+<section class="container mx-auto space-y-24 px-16 max-md:px-8">
+  <div class="text-center max-w-5xl mx-auto space-y-8">
+    <h2 class="header text-gradient">About</h2>
+    <p class="text-foreground-light text-start text-pretty">
+      Exodia OS is a highly customized Arch-based Linux distribution built for
+      and by cybersecurity experts, and also for daily usage, capable of
+      performing the strongest pentests and the simplest daily tasks . Even if
+      you're not a cybersecurity fanatic, you'll come to love Exodia OS for it's
+      aesthetically pleasing interface, tools, and features. Overall, Exodia OS
+      is a great distro choice for programming and development, operations
+      security, OSINT, and of course daily usage. <br />
+      <span class="text-primary">
+        Proudly developed in Egypt 🇪🇬 by Cyb3rTh1eveZ Team.
+      </span>
+    </p>
+    <img src="/desktop.png" alt="desktop" />
+  </div>
+
+  <div
+    class="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-8 place-items-center *:*:!w-full"
+  >
+    <Card client:load title="PowerShell">
+      Microsoft PowerShell pre-installed pre-configured with Oh My Posh.
+    </Card>
+    <Card client:load title="TUI Apps">
+      Support a whole bunch of TUI Apps RUN: <br />
+      <span class="text-sm text-primary">pacman -Sg Exodia-TUI-Apps </span>
+      <br />
+      to list all available apps
+    </Card>
+    <Card client:load title="Files Templates">
+      Help you to create coding files like web Dev, python, etc... and more
+      Files Templates.
+    </Card>
+    <Card client:load title="EWW">
+      Supporting ElKowars wacky widgets(EWW), comes with EWW <br />
+      <span class="text-sm text-primary">pre-installed/configured.</span>
+    </Card>
+    <Card client:load title="zsh">
+      Exodia comes zsh pre-installed and pre-configured zsh is the default shell
+    </Card>
+    <Card client:load title="PredatorSense">
+      A kernel module to control RGB & Fan speed in Linux for Acer Predator
+      Laptops via: <br />
+      <span class="text-sm text-primary"
+        >Predator-Sense-CLI <br /> Predator-Sense-GUI</span
+      >
+    </Card>
+    <Card client:load title="CyberSecurity Tools">
+      Support tools for all CyberSecurity fields using BlackArch Repos & Exodia
+      Repos
+    </Card>
+    <Card client:load title="BIOS & UEFI"> Supporting both BIOS & UEFI </Card>
+    <Card client:load title="Plymouth">
+      Supporting Plymouth <br />
+      <span class="text-sm text-primary"> exodia-plymouth </span>
+      is the default theme
+    </Card>
+  </div>
+
+  <div class="relative bg-secondary p-12 max-sm:px-6 rounded-lg w-full space-y-8">
+    <h2 class="header text-gradient">Benefits</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <ul class="list-disc list-inside text-foreground-light space-y-2 pl-8 max-sm:pl-4">
+        {benefits.map((benefit) => <li>{benefit}</li>)}
+      </ul>
+      <img src="/benf-rit-bg.png" alt="desktop" class="" />
+    </div>
+  </div>
 </section>
