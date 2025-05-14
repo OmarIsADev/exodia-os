@@ -1,0 +1,35 @@
+---
+import Header from "../../../layouts/Header.astro";
+import { BsArrowDownShort } from "react-icons/bs";
+import { DevCard } from "../../ui/card";
+import { FaGithub } from "react-icons/fa";
+import Team from "./team";
+---
+
+<section>
+  <Header>
+    <h1 class="text-5xl font-extrabold text-gradient">ExodiaOS Team</h1>
+    <p class="text-foreground-light max-w-2xl">
+      Exodia Project is a community-driven project. In this page we list
+      contributors and members who have contributed significantly to Exodia
+    </p>
+    <a href="/team#team">
+      <BsArrowDownShort
+        className="animate-bounce text-primary cursor-pointer"
+        size={64}
+      />
+    </a>
+  </Header>
+
+  <Team client:load />
+</section>
+
+<style scoped>
+  section {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+  }
+</style>

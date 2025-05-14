@@ -82,6 +82,14 @@ body {
   background-color: #010d16;
   font-family: "Predator", sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+header {
+  width: 100%;
+  min-height: 550px;
+  height: 80vh;
+  position: relative;
 }
 
 a {

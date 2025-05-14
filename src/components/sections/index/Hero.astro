@@ -1,51 +1,24 @@
 ---
+import Header from "../../../layouts/Header.astro";
 import Button from "../../ui/button";
 import TypedJS from "../../ui/typed.tsx";
 ---
 
-<header>
-  <img src="/main-bg.jpg" alt="">
-  <div class="overlay"></div>
-  <div
-    class="text-center text-foreground-light h-full flex flex-col justify-center items-center relative z-10 gap-4"
-  >
-    <p class="text-primary-foreground font-extrabold">Exodia OS</p>
-    <h1 class="max-sm:!text-4xl max-lg:!text-5xl typed text-gradient">
-      An OS for <TypedJS client:only />
-    </h1>
-    <p class="font-bold">
-      A highly customized arch-based distro For All Cybersecurity fields.
-    </p>
-    <div class="flex gap-3">
-      <a href="/download"><Button rounded="full">Download</Button></a>
-      <a href="/wiki"><Button rounded="full" variant="bordered">Wiki</Button></a>
-    </div>
+<Header>
+  <p class="text-primary-foreground font-extrabold">Exodia OS</p>
+  <h1 class="max-sm:!text-4xl max-lg:!text-5xl typed text-gradient">
+    An OS for <TypedJS client:only />
+  </h1>
+  <p class="font-bold">
+    A highly customized arch-based distro For All Cybersecurity fields.
+  </p>
+  <div class="flex gap-3">
+    <a href="/download"><Button rounded="full">Download</Button></a>
+    <a href="/wiki"><Button rounded="full" variant="bordered">Wiki</Button></a>
   </div>
-</header>
+</Header>
 
 <style scoped>
-  header {
-    width: 100%;
-    min-height: 550px;
-    height: 80vh;
-    position: relative;
-  }
-
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(#010d16b9, #010d16);
-    z-index: 1;
-  }
-
   .typed {
     font-weight: 600;
     margin: 10px 0px;

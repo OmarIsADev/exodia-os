@@ -1,12 +1,20 @@
 import { useState, type ReactNode } from "react";
 
-const Card = ({
-  title,
-  children,
-}: {
-  title: string;
+interface CardProps {
+  title?: string;
+  tiltAmount?: number;
   children: ReactNode;
-}) => {
+}
+
+interface DevCardProps {
+  img: string;
+  name: string;
+  major: string;
+  connections: { icon: ReactNode; href: string }[];
+  children: ReactNode;
+}
+
+const Card = ({ title, tiltAmount = 20, children }: CardProps) => {
   const [tiltX, setTiltX] = useState(0);
   const [tiltY, setTiltY] = useState(0);
   const [popUp, setPopUp] = useState(false);
@@ -16,7 +24,7 @@ const Card = ({
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / card.clientWidth;
     const y = (e.clientY - rect.top) / card.clientHeight;
-    const tiltAmount = 20; // Adjust for stronger 3D effect
+
     setTiltX((x - 0.5) * tiltAmount);
     setTiltY(-(y - 0.5) * tiltAmount);
   };
@@ -33,7 +41,9 @@ const Card = ({
 
   return (
     <div
-      className="relative flex flex-col items-center min-w-64 w-fit min-h-64 h-fit p-4 bg-secondary rounded-lg shadow-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary"
+      className={`relative flex flex-col items-start min-w-64 w-fit p-4 space-y-4 bg-secondary rounded-lg shadow-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary ${
+        title ? "min-h-64 h-fit" : "h-full"
+      }`}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -42,11 +52,45 @@ const Card = ({
         zIndex: popUp ? 1 : 0,
       }}
     >
-      <h3 className="mt-4 text-xl text-gradient font-bold">{title}</h3>
-      <div className="mt-4 h-full flex justify-center">
-        <p className="text-foreground-light h-fit text-center text-pretty">{children}</p>
+      {title && (
+        <h3 className="text-xl text-gradient text-center w-full font-bold">
+          {title}
+        </h3>
+      )}
+      <div className="h-full flex justify-center">
+        <div
+          className={`text-foreground-light h-full text-pretty flex flex-col gap-2.5 ${
+            title ? "text-center" : ""
+          }`}
+        >
+          {children}
+        </div>
       </div>
     </div>
+  );
+};
+
+export const DevCard = ({
+  img,
+  name,
+  major,
+  connections,
+  children,
+}: DevCardProps) => {
+  return (
+    <Card tiltAmount={10}>
+      <img src={img} alt="" className="rounded-full size-20" />
+      <h3 className="mt-4 text-2xl text-foreground font-bold">{name}</h3>
+      <p className="text-gradient">{major}</p>
+      <p className="w-64">{children}</p>
+      <div className="flex gap-4 *:hover:text-primary *:hover:scale-110 *:cursor-pointer *:transition h-full items-end">
+        {connections.map((connection, index) => (
+          <a target="_blank" href={connection.href} key={index}>
+            {connection.icon}
+          </a>
+        ))}
+      </div>
+    </Card>
   );
 };
 

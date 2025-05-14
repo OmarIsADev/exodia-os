@@ -1,0 +1,27 @@
+<header>
+    <img src="/main-bg.jpg" alt="" />
+    <div class="overlay"></div>
+    <div
+      class="text-center text-foreground-light h-full flex flex-col justify-center items-center relative z-10 gap-4"
+    >
+      <slot />
+    </div>
+  </header>
+  
+  <style scoped>
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(#010d16b9, #010d16);
+      z-index: 1;
+    }
+  </style>
+  
