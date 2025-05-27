@@ -1,0 +1,56 @@
+---
+import { siteConfig } from "../../../config/site";
+
+import { FaDiscord, FaGithub, FaReddit, FaTelegram } from "react-icons/fa";
+
+import Head from "../../../layouts/Header.astro";
+import CopyLink from "../../ui/copy-link";
+
+const { socialLinks } = siteConfig;
+
+const links = [
+  {
+    title: "Discord",
+    href: socialLinks.discord,
+    icon: FaDiscord,
+  },
+  {
+    title: "Github",
+    href: socialLinks.github,
+    icon: FaGithub,
+  },
+  {
+    title: "Reddit",
+    href: socialLinks.reddit,
+    icon: FaReddit,
+  },
+  {
+    title: "Telegram",
+    href: socialLinks.telegram,
+    icon: FaTelegram,
+  },
+];
+---
+
+<Head>
+  <h1 class="max-sm:!text-4xl max-lg:!text-5xl typed text-gradient">
+    Join our communities
+  </h1>
+  <p class="font-bold">
+    Join our communities to get the latest updates and support
+  </p>
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-4 container mx-auto">
+    {
+      links.map((link) => (
+        <div class="flex items-center gap-2 bg-secondary px-4 rounded-lg w-full h-20 hover:shadow hover:shadow-primary transition-all">
+          <a href={link.href} class="flex items-center gap-4 w-full h-full">
+            <link.icon size={32} />
+            <p>{link.title}</p>
+          </a>
+          {/* make it load on client */}
+          <CopyLink client:load href={link.href} />
+        </div>
+      ))
+    }
+  </div>
+</Head>
