@@ -1,5 +1,8 @@
 ---
 import { FaDiscord, FaGithub, FaReddit, FaTelegram } from "react-icons/fa";
+import { siteConfig } from "../../config/site.ts";
+
+const { socialLinks } = siteConfig;
 
 type section = {
   title: string;
@@ -74,6 +77,25 @@ const sectoins: section[] = [
     ],
   },
 ];
+
+const links = [
+  {
+    href: socialLinks.discord,
+    icon: FaDiscord,
+  },
+  {
+    href: socialLinks.github,
+    icon: FaGithub,
+  },
+  {
+    href: socialLinks.reddit,
+    icon: FaReddit,
+  },
+  {
+    href: socialLinks.telegram,
+    icon: FaTelegram,
+  },
+];
 ---
 
 <footer
@@ -104,34 +126,17 @@ const sectoins: section[] = [
     <div class="flex flex-col gap-4">
       <h4 class="text-gradient text-2xl">Socials</h4>
       <div class="flex flex-wrap gap-2 items-center">
-        <a href="https://discord.gg/wPDyfR5AV9">
-          <FaDiscord
-            size={32}
-            className="hover:text-primary hover:scale-110 transition"
-            title="Discord"
-          />
-        </a>
-        <a href="https://github.com/Exodia-OS">
-          <FaGithub
-            size={32}
-            className="hover:text-primary hover:scale-110 transition"
-            title="Github"
-          />
-        </a>
-        <a href="https://www.reddit.com/r/ExodiaOS">
-          <FaReddit
-            size={32}
-            className="hover:text-primary hover:scale-110 transition"
-            title="Reddit"
-          />
-        </a>
-        <a href="https://t.me/exodiaos">
-          <FaTelegram
-            size={32}
-            className="hover:text-primary hover:scale-110 transition"
-            title="Telegram"
-          />
-        </a>
+        {
+          links.map((link) => (
+            <a href={link.href}>
+              <link.icon
+                size={32}
+                className="hover:text-primary hover:scale-110 transition"
+                title={link.href}
+              />
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
