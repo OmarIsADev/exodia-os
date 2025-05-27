@@ -3,6 +3,10 @@ import Button from "../ui/button";
 
 const routes = [
   {
+    name: "Home",
+    href: "/",
+  },
+  {
     name: "Community",
     href: "/community",
   },
@@ -41,7 +45,7 @@ function NavBar() {
 
   return (
     <nav
-      className={`*:w-fit z-50 fixed w-full h-20 px-8 py-4 flex items-center justify-between max-lg:justify-center max-sm:justify-between transition duration-300 ${
+      className={`*:w-fit z-50 fixed w-full h-20 px-8 py-4 flex items-center justify-between max-lg:justify-center max-md:justify-between transition duration-300 ${
         isScrolled
           ? "bg-background border-b border-primary"
           : "bg-transparent border-transparent"
@@ -58,14 +62,14 @@ function NavBar() {
       <MobileMenu isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
 
       <div
-        className={`flex gap-12 max-md:gap-6 items-center h-16 min-sm:pl-6 min-sm:pr-2 py-4 rounded-full justify-self-end transition ${
-          isScrolled ? "" : "min-sm:border-2 border-primary min-sm:bg-secondary"
+        className={`flex gap-12 max-lg:gap-2.5 items-center h-16 min-md:pl-6 min-sm:pr-2 py-4 rounded-full justify-self-end transition ${
+          isScrolled ? "" : "min-md:border-2 border-primary min-md:bg-secondary"
         } `}
       >
-        <div className="flex gap-12 max-md:gap-6">
+        <div className="flex gap-12 max-md:gap-2 max-md:hidden">
           {routes.map((route) => (
             <a
-              className="hover:text-primary-foreground max-sm:hidden transition"
+              className="hover:text-primary-foreground transition"
               key={route.name}
               href={route.href}
             >
@@ -74,7 +78,7 @@ function NavBar() {
           ))}
         </div>
         <a href="/download">
-          <Button rounded="full">Download</Button>
+          <Button class="!px-8" rounded="full">Download</Button>
         </a>
       </div>
     </nav>
@@ -94,7 +98,7 @@ function MobileMenu({
     "w-6 h-1 rounded-full bg-primary transition ease transform duration-300";
 
   return (
-    <div className="min-sm:hidden justify-self-center">
+    <div className="min-md:hidden justify-self-center">
       <button
         className="cursor-pointer w-fit flex flex-col gap-1"
         onClick={toggle}
