@@ -9,11 +9,11 @@ enum OS {
 }
 
 const osIcons = {
-  [OS.Home]: { src: "/public/logos/exodia.png", styling: "mix-blend-darken" },
-  [OS.Predator]: { src: "/public/logos/Predator.png", styling: "" },
-  [OS.Wireless]: { src: "/public/logos/Wireless.png", styling: "" },
-  [OS.Dark]: { src: "/public/logos/Dark-ed.png", styling: "" },
-  [OS.ARM]: { src: "/public/logos/arm.png", styling: "" },
+  [OS.Home]: { src: "/Logos/exodia.png", styling: "mix-blend-darken" },
+  [OS.Predator]: { src: "/Logos/Predator.png", styling: "" },
+  [OS.Wireless]: { src: "/Logos/wireless.png", styling: "" },
+  [OS.Dark]: { src: "/Logos/Dark-ed.png", styling: "" },
+  [OS.ARM]: { src: "/Logos/ARM.png", styling: "" },
 };
 
 const osColors = {
@@ -55,7 +55,7 @@ const osData: Record<
     },
     description:
       "This Edition is a general purpose operating system with the typical Exodia OS look and feel. This edition is designed for daily use, privacy and software development.",
-    gif: "/public/GIFs/Home-ed.gif",
+    gif: "/GIFs/Home-ed.gif",
   },
   [OS.Predator]: {
     downloads: {
@@ -67,7 +67,7 @@ const osData: Record<
     },
     description:
       "This Edition For Acer Predator Laptops with the typical Exodia OS look and feel, Keyboard RGB change based on the selected theme PredatorSense pre-installed to control CPU/GPU Fan, Keyboard RGB",
-    gif: "/public/GIFs/Predator-ed.gif",
+    gif: "/GIFs/Predator-ed.gif",
   },
   [OS.Wireless]: {
     downloads: {
@@ -79,17 +79,17 @@ const osData: Record<
     },
     description:
       "This Edition is For penetration testing (and especially for Wireless PenTesting) come with 400+ pre-installed Tools For PenTesting(and 130+ For Wireless PenTesting)",
-    gif: "/public/GIFs/Wirelss-ed.gif",
+    gif: "/GIFs/Wirelss-ed.gif",
   },
   [OS.Dark]: {
     description:
       "ISO image for Exodia OS Dark edition (security-focused), this edition was built for the dark web to preserve privacy and anonymity.",
-    gif: "/public/GIFs/Dark-ed.png",
+    gif: "/GIFs/Dark-ed.png",
   },
   [OS.ARM]: {
     description:
       "A flavor edition for the ARM family: An automated script that installs Exodia OS settings, repositories, etc., over an Arch ARM installation.",
-    gif: "/public/GIFs/ARM-ed.png",
+    gif: "/GIFs/ARM-ed.png",
   },
 };
 
