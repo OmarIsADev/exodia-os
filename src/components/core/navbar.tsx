@@ -12,7 +12,7 @@ const routes = [
   },
   {
     name: "Wiki",
-    href: "/wiki",
+    href: "https://exodia-os.github.io/wiki",
   },
   // {
   //   name: "Keybinding",
@@ -65,7 +65,7 @@ function NavBar() {
         className={`flex gap-12 max-lg:gap-2.5 items-center h-16 min-md:pl-6 min-sm:pr-2 py-4 rounded-full justify-self-end transition ${
           isScrolled ? "" : "min-md:border-2 border-primary min-md:bg-secondary"
         } `}
-         id="navbar"
+        id="navbar"
       >
         <div className="flex gap-12 max-md:gap-2 max-md:hidden">
           {routes.map((route) => (
@@ -79,7 +79,9 @@ function NavBar() {
           ))}
         </div>
         <a href="/download">
-          <Button class="!px-8" rounded="full">Download</Button>
+          <Button class="!px-8" rounded="full">
+            Download
+          </Button>
         </a>
       </div>
     </nav>
