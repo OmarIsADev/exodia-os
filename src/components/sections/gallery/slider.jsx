@@ -96,19 +96,19 @@ export default function Carousel() {
   );
 
   return (
-    <div className="p-4 flex justify-center w-full items-center">
-      <div className="relative w-full">
-        <div className="inline-flex overflow-x-hidden w-full carousel">
+    <div className="p-4 flex justify-center h-[calc(100vh-256px)] w-full items-center">
+      <div className="relative w-full h-full overflow-hidden aspect-video items-center flex justify-center">
+        <div className="inline-flex aspect-video overflow-x-hidden h-full carousel">
           {sliderControl(true)}
           {images.map((img, i) => (
             <div
-              className="w-full flex-shrink-0"
+              className="h-full aspect-video flex-shrink-0"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               key={img}
               ref={refs[i]}
             >
-              <img src={img} className="w-full rounded-xl object-contain" />
+              <img src={img} className="w-full h-full rounded-xl object-contain" />
             </div>
           ))}
           {sliderControl()}
