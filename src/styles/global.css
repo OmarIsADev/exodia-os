@@ -25,7 +25,11 @@
 
 @layer base {
   .text-gradient {
-    background-image: linear-gradient(to right, var(--primary), var(--primary-darker));
+    background-image: linear-gradient(
+      to right,
+      var(--primary),
+      var(--primary-darker)
+    );
     background-clip: text;
     -webkit-background-clip: text; /* Clip text to the background's shape */
     -webkit-text-fill-color: transparent; /* Make the text transparent */

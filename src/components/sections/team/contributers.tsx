@@ -45,11 +45,11 @@ const contributers: Contributer[] = [
 
 const ContributersComponent: React.FC = () => {
   return (
-    <div className="max-w-4xl container mx-auto px-16 space-y-4">
+    <div className="max-w-6xl container mx-auto px-16 space-y-4">
       <h1 className="!text-4xl !font-extrabold text-gradient text-center">
         Wall Of Contributors
       </h1>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 bg-secondary rounded-3xl p-4 justify-stretch">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 bg-secondary rounded-3xl px-8 py-6 justify-stretch">
         {contributers.map((contributer) => (
           <div
             key={contributer.name}
